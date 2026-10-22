@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Expression Precision">
+  <defs>
+    <linearGradient id="mark-bg" x1="10" x2="54" y1="8" y2="58" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#17172A"/>
+      <stop offset="0.58" stop-color="#4A49C5"/>
+      <stop offset="1" stop-color="#6B6BEA"/>
+    </linearGradient>
+    <radialGradient id="mark-glow" cx="0" cy="0" r="1" gradientTransform="matrix(18 0 0 18 47 19)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#B8F4E6" stop-opacity="0.72"/>
+      <stop offset="1" stop-color="#B8F4E6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="64" height="64" rx="18" fill="url(#mark-bg)"/>
+  <rect width="64" height="64" rx="18" fill="url(#mark-glow)"/>
+  <path d="M18 22h16M18 32h21" fill="none" stroke="#D9D9FF" stroke-width="4.2" stroke-linecap="round" opacity="0.68"/>
+  <path d="M18 42h13l15-20" fill="none" stroke="#FFFFFF" stroke-width="4.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="46" cy="22" r="5.2" fill="#B8F4E6"/>
+  <circle cx="31" cy="42" r="3.6" fill="#FFFFFF"/>
+</svg>

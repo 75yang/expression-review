@@ -1,0 +1,111 @@
+/* Shared language, distinct layouts: capture, settings, and review. */
+.libraryWorkspace[data-view=capture] { max-width: 1120px; }
+.libraryWorkspace[data-view=capture] .recorderPanel { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(260px, 1fr); gap: 24px 32px; }
+.libraryWorkspace[data-view=capture] .panelHeader { grid-column: 1 / -1; padding: 0 0 16px; border-bottom: 1px solid var(--line); }
+.libraryWorkspace[data-view=capture] .previewFrame { margin: 0; grid-column: 1; grid-row: 2 / 5; align-self: start; aspect-ratio: 4 / 3; border-radius: var(--radius-panel); background: #f3f5f7; border: 1px solid var(--line); }
+.libraryWorkspace .previewEmpty { color: var(--muted); display: flex; flex-direction: column; gap: 12px; }
+.previewEmpty strong { font-size: 15px; font-weight: 500; }
+.previewEmpty span { font-size: 12px; }
+.libraryWorkspace[data-view=capture] .recordingFields { grid-column: 2; display: grid; grid-template-columns: 1fr; gap: 20px; margin: 0; }
+.libraryWorkspace[data-view=capture] .recordingFields label { gap: 8px; }
+.libraryWorkspace[data-view=capture] .recordingFields span { font-size: 13px; font-weight: 500; }
+.libraryWorkspace[data-view=capture] .recorderActions { grid-column: 2; margin: 0; display: flex; flex-wrap: wrap; gap: 12px; }
+.libraryWorkspace .recorderActions button { height: 40px; min-height: 40px; font-size: 14px; padding: 8px 16px; font-weight: 500; box-shadow: none; border-radius: var(--radius-control); }
+.libraryWorkspace .primaryAction { background: var(--blue); border-color: var(--blue); }
+.libraryWorkspace .primaryAction:hover:not(:disabled) { background: var(--blue-dark); }
+.libraryWorkspace .uploadAction { background: #fff; border: 1px solid var(--line-strong); color: var(--ink); }
+.libraryWorkspace[data-view=capture] .secondaryRecordingBanner { grid-column: 2; margin: 0; border-radius: 6px; }
+.libraryWorkspace[data-view=capture] .failedRecordingBackup { grid-column: 1 / -1; }
+.libraryWorkspace .recordingBadge { border-radius: 4px; font-size: 12px; font-weight: 500; }
+.libraryWorkspace[data-view=settings] { max-width: 960px; }
+.libraryWorkspace[data-view=settings] .settingsContent { gap: 0; }
+.libraryWorkspace[data-view=settings] .settingsStatus { padding: 0 0 24px; gap: 16px; }
+.libraryWorkspace[data-view=settings] :is(.configPanel,.pairingPanel,.homeFillerManager) { padding: 28px 0; margin: 0; border: 0; border-top: 1px solid var(--line); border-radius: 0; background: #fff; box-shadow: none; }
+.libraryWorkspace[data-view=settings] .configPanel { display: grid; gap: 20px; }
+.libraryWorkspace[data-view=settings] .settingsSectionHeading { display: block; }
+.settingsSectionHeading p { color: var(--muted); margin: 4px 0 0; font-size: 13px; }
+.libraryWorkspace[data-view=settings] :is(.pairingPanelHeader,.fillerManagerHeader) { margin-bottom: 20px; }
+.libraryWorkspace[data-view=settings] :is(.pairingPanelHeader,.fillerManagerHeader) h3 { font-size: 18px; font-weight: 600; }
+.libraryWorkspace[data-view=settings] code { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 12px; background: var(--panel-soft); padding: 12px; border-radius: 4px; }
+.libraryWorkspace[data-view=settings] .libraryPathForm { gap: 8px; }
+.libraryWorkspace[data-view=settings] .fillerWordList { gap: 0; }
+.libraryWorkspace[data-view=settings] .fillerWordItem { padding: 12px 0; border-bottom: 1px solid var(--line); }
+.libraryWorkspace[data-view=settings] .fillerCreateForm { margin-bottom: 12px; }
+.libraryWorkspace[data-view=settings] button { font-weight: 500; border-radius: var(--radius-control); box-shadow: none; }
+.libraryWorkspace[data-view=settings] :is(.fillerManagerCount,.modelPill) { border-radius: 4px; font-weight: 400; }
+.libraryWorkspace[data-view=settings] .pairedDeviceItem { border: 0; border-bottom: 1px solid var(--line); border-radius: 0; padding: 12px 0; }
+.libraryWorkspace[data-view=settings] :is(.fillerEmpty,.pairedDeviceEmpty) { padding: 16px 0; color: var(--muted); }
+.reviewShell { max-width: 1360px; }
+.reviewShell .reviewHeader { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 16px; margin-bottom: 24px; }
+.reviewHeader > .backLink { grid-column: 1 / -1; justify-self: start; border: 0; padding: 0; background: none; color: var(--muted); }
+.reviewShell .reviewTitleDisplay h1 { font-size: 24px; font-weight: 600; overflow-wrap: anywhere; }
+.reviewShell .reviewHeader span { font-weight: 400; }
+.reviewShell .reviewGrid { grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 32px; }
+.reviewShell .videoPane { padding: 0; border: 0; border-radius: 0; gap: 12px; }
+.reviewShell :is(.videoPane video,.audioPlayerFrame) { max-height: 340px; border-radius: var(--radius-panel); }
+.reviewShell .videoControls { padding: 12px 0; flex-wrap: wrap; gap: 8px; }
+.reviewShell .videoControls .timeSlider { min-width: 60px; }
+.reviewShell .reviewMeta { padding: 0; }
+.reviewShell .reviewNotesPanel { padding: 24px 0 0; border: 0; border-top: 1px solid var(--line); border-radius: 0; background: #fff; gap: 16px; }
+.reviewShell .reviewNotesHeader { flex-wrap: wrap; gap: 12px; }
+.reviewShell .reviewNotesHeader h2 { font-size: 18px; font-weight: 600; }
+.reviewShell .reviewNotesHeader p { font-size: 13px; color: var(--muted); }
+.reviewShell .aiReviewButton { background: #fff; border-color: var(--line-strong); color: var(--ink); font-weight: 500; }
+.reviewShell .aiReviewButton:hover:not(:disabled) { background: var(--panel-soft); }
+.reviewShell .reviewNoteTabs { border-bottom: 1px solid var(--line); gap: 4px; }
+.reviewShell .reviewNoteTabs button { border: 0; border-bottom: 2px solid transparent; border-radius: 0; background: transparent; padding: 8px 12px; height: 40px; font-size: 13px; }
+.reviewShell .reviewNoteTabs button[aria-selected=true] { border-bottom-color: var(--blue); color: var(--blue); background: none; }
+.reviewShell .reviewNoteTabs button:hover { background: var(--panel-soft); }
+.reviewShell .reviewDocumentEditor { padding: 0; border: 0; background: none; gap: 12px; }
+.reviewShell textarea.reviewNotesInput { min-height: 280px; font-size: 14px; line-height: 1.8; padding: 16px; box-shadow: none; border-radius: var(--radius-control); }
+.reviewShell .reviewNotesActions { position: sticky; bottom: 0; padding: 12px 0; background: #fff; border-top: 1px solid var(--line); z-index: 2; }
+.reviewShell .reviewNotesStatus { font-weight: 400; }
+.reviewShell .saveNotesButton { height: 36px; }
+.reviewShell .transcriptPane { padding: 0 0 0 24px; border: 0; border-left: 1px solid var(--line); border-radius: 0; max-height: calc(100dvh - 48px); top: 24px; }
+.reviewShell .transcriptHeader { align-items: start; gap: 12px; }
+.reviewShell .transcriptHeader h2 { font-size: 18px; font-weight: 600; }
+.reviewShell .transcriptHeaderActions { flex-wrap: wrap; gap: 8px; }
+.reviewShell .transcriptHeaderActions button { font-size: 12px; padding: 6px 8px; background: #fff; color: var(--muted); border: 1px solid var(--line); }
+.reviewShell .transcriptHeaderActions button[aria-pressed=true] { background: var(--blue-soft); color: var(--blue); }
+.reviewShell .fillerStatsPanel { border: 0; border-block: 1px solid var(--line); border-radius: 0; background: none; padding: 16px 0; margin: 16px 0; }
+.reviewShell .fillerStatsHeader { flex-wrap: wrap; gap: 8px; }
+.reviewShell .fillerStatItem { border-radius: 4px; background: var(--panel-soft); border: 0; }
+.reviewShell .fillerHighlight { font-weight: 500; border-radius: 2px; }
+.reviewShell .transcriptRow { border: 0; border-radius: 0; border-left: 2px solid transparent; padding: 12px; background: #fff; }
+.reviewShell .transcriptRow:hover { background: var(--panel-soft); }
+.reviewShell .transcriptRow.active { background: var(--blue-soft); border-left-color: var(--blue); }
+.reviewShell .transcriptLine { font-size: 14px; line-height: 1.85; font-weight: 400; }
+.sentenceTime { display: block; font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; margin-bottom: 4px; }
+.reviewShell .recordingNavigator { border: 0; border-top: 1px solid var(--line); border-radius: 0; padding: 24px 0; margin-top: 32px; }
+.reviewShell .recordingNavigatorLink { background: none; border: 0; border-radius: 6px; }
+.reviewShell .recordingNavigatorLink strong { font-size: 13px; font-weight: 500; }
+.reviewShell .recordingNavigatorLink:hover { background: var(--panel-soft); }
+.reviewShell button:hover:not(:disabled) { filter: none; }
+.reviewShell .emptyTranscript { padding: 40px 16px; gap: 12px; text-align: center; }
+.reviewShell .emptyTranscript p { font-size: 13px; color: var(--muted); }
+@media (max-width: 1100px) {
+  .reviewShell .reviewHeader { grid-template-columns: 1fr; }
+  .reviewShell .reviewGrid { gap: 24px; }
+  .reviewShell .transcriptPane { padding-left: 16px; }
+  .reviewShell .recordingNavigator { grid-template-columns: 1fr 1fr; }
+  .reviewShell .recordingJumpControl { grid-column: 1 / -1; grid-row: 1; }
+}
+@media (max-width: 900px) {
+  .libraryWorkspace[data-view=capture] .recorderPanel { grid-template-columns: 1fr; }
+  .libraryWorkspace[data-view=capture] :is(.previewFrame,.recordingFields,.recorderActions,.secondaryRecordingBanner) { grid-column: 1; grid-row: auto; }
+  .libraryWorkspace[data-view=capture] .previewFrame { aspect-ratio: 16 / 9; max-height: 340px; }
+  .reviewShell .reviewGrid { grid-template-columns: 1fr; }
+  .reviewShell .transcriptPane { position: static; max-height: none; padding: 24px 0 0; border-left: 0; border-top: 1px solid var(--line); }
+}
+@media (max-width: 600px) {
+  .reviewShell .reviewTitleDisplay h1 { font-size: 22px; line-height: 1.5; }
+  .libraryWorkspace[data-view=settings] .libraryPathControl { display: flex; flex-wrap: wrap; }
+  .libraryWorkspace[data-view=settings] .libraryPathControl input { flex-basis: 100%; }
+  .libraryWorkspace[data-view=settings] .fillerWordItem { grid-template-columns: minmax(0,1fr) 36px auto auto; }
+  .libraryWorkspace[data-view=settings] .fillerPreview { display: none; }
+  .libraryWorkspace[data-view=settings] .fillerWordItem button { padding: 6px 8px; }
+  .libraryWorkspace[data-view=settings] .fillerWordItem button svg { display: none; }
+  .reviewShell .reviewNotesHeaderActions { flex-wrap: wrap; }
+  .reviewShell .reviewDocumentToolbar { grid-template-columns: minmax(0,1fr) auto; }
+  .reviewShell .recordingNavigator { gap: 12px; }
+}

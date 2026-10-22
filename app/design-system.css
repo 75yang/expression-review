@@ -1,0 +1,106 @@
+/* Shared UI contract. Page-specific geometry belongs in the page stylesheet. */
+:root {
+  --bg: #fff; --panel: #fff; --panel-soft: #f6f7f9;
+  --ink: #18212b; --muted: #5f6b7a;
+  --line: #e5e7eb; --line-strong: #cbd5e1;
+  --blue: #245ea8; --blue-dark: #194a86; --blue-soft: #eff5fc;
+  --green: #18794e; --green-soft: #edf8f1;
+  --red: #b42318; --red-soft: #fff1f0;
+  --amber: #9a6700; --amber-soft: #fff8e6;
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+  --space-6: 24px; --space-8: 32px; --space-12: 48px;
+  --radius-control: 6px; --radius-panel: 8px; --radius-dialog: 10px;
+  --control-height: 40px; --button-height: 36px;
+  --sidebar-width: 208px; --content-width: 1200px; --review-width: 1440px;
+  --shadow: none; --shadow-overlay: 0 8px 28px rgb(24 33 43 / 12%);
+}
+html { font-size: 14px; line-height: 1.6; scroll-behavior: auto; }
+body { background: var(--bg); color: var(--ink); }
+h1 { font-size: 26px; line-height: 34px; font-weight: 600; letter-spacing: -.02em; }
+h2 { font-size: 18px; line-height: 26px; font-weight: 600; }
+h3 { font-size: 15px; line-height: 22px; font-weight: 600; }
+button, input, textarea, select { font: inherit; }
+button, select { min-height: var(--button-height); }
+button { border-radius: var(--radius-control); font-weight: 500; }
+input:not([type=range]):not([type=color]):not([type=checkbox]):not([type=radio]), select, textarea {
+  border: 1px solid var(--line-strong); border-radius: var(--radius-control);
+  background: var(--panel); color: var(--ink); padding: 8px 12px; max-width: 100%;
+}
+input:not([type=range]):not([type=color]):not([type=checkbox]):not([type=radio]), select { min-height: var(--control-height); }
+textarea { line-height: 1.65; }
+input::placeholder, textarea::placeholder { color: var(--muted); opacity: 1; }
+button:disabled { opacity: .5; cursor: not-allowed; }
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--blue); outline-offset: 3px;
+}
+[hidden] { display: none !important; }
+.uiButton { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 36px; padding: 6px 12px; border: 1px solid var(--line-strong); border-radius: var(--radius-control); background: #fff; color: var(--ink); font-size: 14px; font-weight: 500; white-space: nowrap; cursor: pointer; }
+.uiButton:hover:not(:disabled) { background: var(--panel-soft); }
+.uiButton svg { width: 16px; height: 16px; }
+.uiButtonPrimary { background: var(--blue); color: #fff; border-color: var(--blue); }
+.uiButtonPrimary:hover:not(:disabled) { background: var(--blue-dark); }
+.uiButtonQuiet { background: transparent; border-color: transparent; color: var(--muted); }
+.uiCard { border: 1px solid var(--line); border-radius: var(--radius-panel); padding: var(--space-6); background: var(--panel); box-shadow: none; }
+/* Native dialog supplies focus containment and Escape behavior when opened with showModal. */
+dialog.uiModal { width: min(560px, calc(100vw - 32px)); max-height: calc(100dvh - 48px); overflow: auto; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius-dialog); box-shadow: var(--shadow-overlay); color: var(--ink); }
+dialog.uiModal::backdrop { background: rgb(24 33 43 / 32%); }
+.uiModalHeader, .uiModalFooter { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.uiModalHeader { margin-bottom: 24px; }
+.uiModalFooter { justify-content: flex-end; margin-top: 24px; }
+.uiTableContainer { overflow-x: auto; }
+.uiTable { width: 100%; border-collapse: collapse; text-align: left; }
+.uiTable th, .uiTable td { padding: 12px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.uiTable th { background: var(--panel-soft); font-size: 12px; color: var(--muted); font-weight: 600; }
+.uiTable tbody tr:hover { background: var(--panel-soft); }
+.applicationShell { min-height: 100dvh; }
+.applicationSidebar { position: fixed; inset: 0 auto 0 0; z-index: 20; width: var(--sidebar-width); display: flex; flex-direction: column; padding: 28px 16px 20px; border-right: 1px solid var(--line); background: #f8f9fb; }
+.applicationBrand { display: flex; align-items: center; gap: 10px; padding: 0 4px; font-weight: 600; font-size: 16px; }
+.applicationBrand small { display: block; font-size: 11px; color: var(--muted); font-weight: 400; margin-top: 2px; letter-spacing: .06em; }
+.brandMark { display: grid; place-items: center; width: 32px; height: 36px; border: 1px solid var(--line-strong); border-radius: 6px; color: var(--blue); background: #fff; font-size: 20px; }
+.applicationNav { display: flex; flex-direction: column; gap: 6px; margin-top: 36px; flex: 1; }
+.applicationNav a { display: flex; align-items: center; gap: 10px; min-height: 40px; padding: 8px 12px; border-radius: 6px; color: var(--muted); }
+.applicationNav a > span { font-size: 18px; width: 20px; text-align: center; }
+.applicationNav a:hover { background: #edf0f4; color: var(--ink); }
+.applicationNav a[aria-current] { background: #e9eff8; color: var(--blue-dark); font-weight: 600; }
+.applicationNav .settingsNavLink { margin-top: auto; }
+.sidebarCaption { font-size: 11px; color: var(--muted); margin: 16px 4px 0; }
+.applicationContent { margin-left: var(--sidebar-width); min-width: 0; }
+.applicationContent:focus { outline: none; }
+.skipLink { position: fixed; top: -100px; left: 16px; z-index: 100; background: #fff; padding: 12px; border: 2px solid var(--blue); }
+.skipLink:focus { top: 12px; }
+.appShell, .reviewShell { width: 100%; max-width: var(--content-width); margin: 0 auto; padding: 32px; min-height: 100dvh; }
+.reviewShell { max-width: var(--review-width); }
+.recorderPanel, .libraryPanel, .videoPane, .transcriptPane, .recordingNavigator { box-shadow: none; border-radius: var(--radius-panel); }
+.reviewTitleDisplay h1 { font-size: 24px; line-height: 32px; }
+.reviewQuickNav { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.reviewQuickNav a { border: 1px solid var(--line); border-radius: 6px; padding: 6px 10px; font-size: 13px; }
+.reviewQuickNav svg { width: 16px; height: 16px; }
+.reviewHeader { flex-wrap: wrap; border-bottom: 1px solid var(--line); padding-bottom: 20px; align-items: center; }
+.reviewNotePaper { box-shadow: none; }
+.transcriptHeader { flex-wrap: wrap; gap: 12px; }
+.transcriptHeader h2 { white-space: nowrap; }
+@media (max-width: 1200px) { .reviewGrid { grid-template-columns: minmax(0, 1fr) minmax(330px, .85fr); } }
+@media (max-width: 1000px) { .reviewGrid { grid-template-columns: 1fr; } .transcriptPane { position: static; max-height: none; } }
+@media (max-width: 760px) {
+  .applicationSidebar { position: static; width: auto; padding: 16px; border-right: 0; border-bottom: 1px solid var(--line); }
+  .applicationBrand small, .sidebarCaption { display: none; }
+  .applicationNav { flex-direction: row; margin-top: 16px; gap: 4px; }
+  .applicationNav a { flex: 1; justify-content: center; padding: 8px; min-height: 44px; }
+  .applicationNav .settingsNavLink { margin-top: 0; }
+  .applicationNav a > span { display: none; }
+  .applicationContent { margin-left: 0; }
+  .appShell, .reviewShell { padding: 24px 16px 48px; }
+  h1 { font-size: 24px; line-height: 32px; }
+  .uiButton { min-height: 40px; }
+  button, select { min-height: 40px; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; } }
+
+.applicationNav a > svg { width: 18px; height: 18px; flex: 0 0 18px; }
+.primaryAction, .uploadAction, .dangerAction, .saveNotesButton, .backLink,
+.recordEditActions button, .tagCreateForm button, .tagManageItem button,
+.libraryPathForm button, .fillerCreateForm button, .fillerManageItem button,
+.reviewNoteTabs button, .copyTranscriptButton, .rerunTranscriptButton, .toggleWaveformButton {
+  border-radius: var(--radius-control); font-weight: 500;
+}
+@media (max-width: 760px) { .applicationNav a > svg { display: none; } }

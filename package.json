@@ -1,0 +1,42 @@
+{
+  "name": "expression-review",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "node server.mjs --hostname 127.0.0.1",
+    "dev:phone": "node server.mjs --hostname 0.0.0.0 --port 3001",
+    "dev:phone:3001": "node server.mjs --hostname 0.0.0.0 --port 3001",
+    "build": "next build",
+    "start": "node server.mjs --hostname 127.0.0.1 --production",
+    "start:phone": "node server.mjs --hostname 0.0.0.0 --port 3001 --production",
+    "preview": "next build && node server.mjs --hostname 127.0.0.1 --production",
+    "test:analysis": "node --experimental-strip-types --test scripts/test-expression-analysis.mjs",
+    "lint": "eslint .",
+    "audit:public": "node scripts/audit-public.mjs"
+  },
+  "dependencies": {
+    "@openai/agents": "^0.3.7",
+    "ffmpeg-static": "^5.3.0",
+    "next": "^16.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "^16.0.0",
+    "typescript": "^5.7.0"
+  },
+  "overrides": {
+    "@hono/node-server": "2.0.12",
+    "hono": "4.12.32",
+    "postcss": "8.5.23",
+    "sharp": "0.35.3"
+  },
+  "engines": {
+    "node": ">=22.19.0 <23"
+  }
+}

@@ -1,0 +1,20 @@
+name: Verify public source
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.19.0'
+          cache: npm
+      - run: node scripts/audit-public.mjs
+      - run: npm ci
+      - run: npm run test:analysis
+      - run: npm run lint
+      - run: npm run build

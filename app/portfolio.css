@@ -1,0 +1,37 @@
+.portfolio { --deep:#18362e; --green:#2d5d4d; --paper:#f7f8f4; --line:#d7ded5; max-width:1120px; margin:auto; padding:0 32px; color:var(--deep); background:var(--paper); min-height:100vh; }
+body:has(.portfolio) { background:var(--paper); }
+.portfolio a { color:inherit; text-decoration:none; }
+.portfolioNav { display:flex; justify-content:space-between; align-items:center; gap:24px; padding:28px 0; border-bottom:1px solid var(--line); font-weight:650; }
+.portfolioNav nav { display:flex; align-items:center; gap:28px; font-size:14px; }
+.portfolioHero { padding:88px 0 68px; max-width:880px; }
+.portfolioEyebrow { margin:0; font-size:12px; letter-spacing:.15em; color:#607468; font-weight:750; text-transform:uppercase; }
+.portfolio h1 { font-size:clamp(42px,6vw,72px); line-height:1.14; letter-spacing:-.05em; margin:24px 0; }
+.portfolio h1 span { color:#648775; }
+.portfolioLead { font-size:20px; line-height:1.85; max-width:740px; }
+.portfolioActions { display:flex; flex-wrap:wrap; gap:26px; align-items:center; margin-top:32px; }
+.portfolio .portfolioPrimary { background:var(--green); color:white; padding:15px 24px; border-radius:8px; display:inline-block; font-weight:650; }
+.portfolioStage { display:grid; grid-template-columns:.92fr 1.08fr; border:1px solid #cad6cc; border-radius:18px; overflow:hidden; background:white; box-shadow:0 24px 70px rgba(32,62,50,.1); }
+.portfolioPlayer { padding:24px; background:#eaf0e7; }
+.portfolioVideo { position:relative; min-height:290px; border-radius:12px; background:linear-gradient(145deg,#1b2a26,#344b42); display:grid; place-items:center; overflow:hidden; }
+.portfolioVideo:before { content:""; width:55%; height:72%; border-radius:90px 90px 20px 20px; background:linear-gradient(#829a8d,#4d675b); opacity:.48; transform:translateY(55px); }
+.portfolioPlay { position:absolute; display:grid; place-items:center; width:58px; height:58px; padding-left:4px; border-radius:50%; background:rgba(255,255,255,.9); color:var(--green); }
+.portfolioVideoLabel { position:absolute; left:18px; bottom:16px; color:white; font-size:12px; }
+.portfolioTimeline { display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:12px; margin-top:18px; font-size:11px; color:#607468; }
+.portfolioTimeline div { height:4px; background:#c7d3c9; border-radius:10px; overflow:hidden; }.portfolioTimeline i { display:block; width:43%; height:100%; background:var(--green); }
+.portfolioStageCaption { display:flex; flex-direction:column; gap:4px; margin-top:20px; }.portfolioStageCaption span { color:#607468; font-size:13px; }
+.portfolioTranscript { padding:26px 28px; }
+.portfolioPanelTitle { display:flex; justify-content:space-between; align-items:center; margin-bottom:18px; }.portfolioPanelTitle small { color:#718278; }
+.portfolioTranscript article { display:grid; grid-template-columns:45px 112px 1fr; gap:14px; align-items:center; padding:17px 10px; border-top:1px solid #e4e9e3; border-radius:8px; }
+.portfolioTranscript article.active { background:#eef4ec; border-top-color:transparent; }.portfolioTranscript time { font-size:12px; color:#74847b; }.portfolioTranscript p { margin:0; line-height:1.65; font-size:14px; }
+.portfolioWaveform { height:36px; display:flex; gap:2px; align-items:center; }.portfolioWaveform i { width:3px; max-height:32px; border-radius:4px; background:#b3c3b7; }.portfolioWaveform.active i { background:#51806d; }
+.portfolioSectionIntro { max-width:730px; }.portfolioSectionIntro h2 { margin:14px 0 0; font-size:clamp(28px,4vw,42px); line-height:1.4; letter-spacing:-.025em; }
+.portfolioWorkflow { padding:100px 0 90px; }.portfolioWorkflow ol { list-style:none; padding:0; margin:48px 0 0; display:grid; grid-template-columns:1fr 1fr; gap:0 48px; border-top:1px solid var(--line); }
+.portfolioWorkflow li { display:grid; grid-template-columns:42px 1fr; gap:14px; padding:28px 0; border-bottom:1px solid var(--line); }.portfolioWorkflow li > span { color:#779080; font-size:12px; padding-top:6px; }.portfolioWorkflow h3 { margin:0 0 8px; font-size:19px; }.portfolioWorkflow p { margin:0; color:#5d7065; line-height:1.75; font-size:14px; }
+.portfolioReview { padding:80px 0; border-top:1px solid var(--line); }.portfolioReviewGrid { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:42px; }.portfolioReviewGrid article { position:relative; padding:36px; border:1px solid #d1dcd2; border-radius:16px; background:white; overflow:hidden; }.portfolioReviewGrid article:last-child { background:#eaf0e7; }.portfolioReviewGrid h3 { margin:10px 0 24px; font-size:28px; }.portfolioReviewGrid ul { margin:0; padding-left:20px; color:#52675c; line-height:2; }.portfolioReviewNumber { position:absolute; right:24px; top:12px; color:rgba(61,101,83,.12); font-size:88px; font-weight:800; }
+.portfolioFiller { display:grid; grid-template-columns:1fr 1.35fr auto; align-items:center; gap:34px; margin:24px 0 100px; padding:28px 32px; border-top:1px solid #bfcfc2; border-bottom:1px solid #bfcfc2; }.portfolioFiller h2 { margin:8px 0 0; font-size:22px; }.portfolioFiller > p { margin:0; color:#596d62; line-height:1.75; font-size:14px; }.portfolioFiller > a { white-space:nowrap; font-weight:650; }
+.portfolioBottom { padding:64px 0; border-top:1px solid var(--line); }.portfolioBottom h2 { max-width:730px; margin:14px 0 28px; font-size:clamp(28px,4vw,42px); line-height:1.45; }
+.portfolio textarea { width:100%; min-height:150px; padding:16px; border:1px solid #b7c7b7; border-radius:10px; font:inherit; line-height:1.8; background:white; color:var(--deep); }
+.portfolioNote { font-size:12px; line-height:1.8; color:#68796e; }.portfolio mark { background:#f8e39d; padding:2px 4px; border-radius:3px; }
+.portfolioDemoList { display:grid; gap:14px; padding:24px 0 60px; }.portfolioDemoList article { padding:18px 24px; border:1px solid #d4dfd3; border-radius:10px; background:white; }.portfolioDemoList summary { cursor:pointer; }.portfolioDemoList small { color:#68796e; }
+@media(max-width:780px) { .portfolio { padding:0 20px; }.portfolioNav nav a:not(:last-child) { display:none; }.portfolioHero { padding:54px 0 44px; }.portfolioStage,.portfolioReviewGrid { grid-template-columns:1fr; }.portfolioVideo { min-height:230px; }.portfolioWorkflow { padding:72px 0 64px; }.portfolioWorkflow ol { grid-template-columns:1fr; gap:0; }.portfolioTranscript article { grid-template-columns:42px 86px 1fr; }.portfolioFiller { grid-template-columns:1fr; gap:12px; margin-bottom:72px; padding:24px 0; }.portfolioFiller > a { margin-top:4px; } }
+@media(max-width:500px) { .portfolioTranscript { padding:20px 14px; }.portfolioPanelTitle small { display:none; }.portfolioTranscript article { grid-template-columns:38px 1fr; gap:8px; }.portfolioTranscript article .portfolioWaveform { grid-column:2; height:24px; }.portfolioReviewGrid article { padding:28px 24px; } }
